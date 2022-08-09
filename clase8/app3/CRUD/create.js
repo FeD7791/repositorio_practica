@@ -9,7 +9,7 @@ function create(arg,titulo,descripcion){
     lec = read(arg); //se carga la lista de tareas
     lec.push({title : titulo ,desc : descripcion});//se aniade las nuevas tareas a la lista
     writeJSON(lec);//se llama a la funcion para transformar a formato JSON
-
+    let a = 'nueva var de prueba';
 }
 
 module.exports = create;
