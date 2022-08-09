@@ -1,6 +1,7 @@
 const read = require('./read');
 const writeJSON = require('./writeJSON')
 function borrar(arg,word){
+    let b = 'esta es otra variable de prueba';
     /* Esta funcion tiene dos argumentos
     arg= lista de tareas
     word= titulo de la lista de tareas
