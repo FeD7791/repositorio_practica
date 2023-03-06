@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./header.ejs') %>
+  <body>
+    <p>Displaying location using Latitude and Longitude</p>
+
+    <button class="geeks" onclick="getlocation()">Click Me</button>
+    <p id="demo1"></p>
+
+    <script>
+      var variable1 = document.getElementById("demo1");
+      function getlocation() {
+        navigator.geolocation.getCurrentPosition(showLoc);
+      }
+      function showLoc(pos) {
+        variable1.innerHTML =
+          "Latitude: " +
+          pos.coords.latitude +
+          "<br>Longitude: " +
+          pos.coords.longitude;
+        let string =
+          "/location/" +
+          String(pos.coords.latitude) +
+          "/" +
+          String(pos.coords.longitude);
+        location.href = string;
+
+        // return false;
+      }
+    </script>
+  </body>
+  <%- include('./footer.ejs') %>
+</html>
