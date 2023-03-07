@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
   <%- include('./header.ejs') %>
   <body>
-    <p>Displaying location using Latitude and Longitude</p>
+    <div class="pure-g center">
+      <div class="pure-u-1">
+        <h1>Wheather app</h1>
+        <div class="pure-u-1"></div>
+        <p>
+          The app works using the window location to get your coordinates, then
+          will use the API:
+        </p>
 
-    <button class="geeks" onclick="getlocation()">Click Me</button>
-    <p id="demo1"></p>
+        <a href="https://www.weatherapi.com/">Wheather API</a>
+      </div>
+      <div class="pure-u-1">
+        <button
+          class="pure-button pure-button-primary location_button"
+          onclick="getlocation()"
+        >
+          Get Wheather
+        </button>
+      </div>
+    </div>
 
     <script>
-      var variable1 = document.getElementById("demo1");
       function getlocation() {
         navigator.geolocation.getCurrentPosition(showLoc);
       }
       function showLoc(pos) {
-        variable1.innerHTML =
-          "Latitude: " +
-          pos.coords.latitude +
-          "<br>Longitude: " +
-          pos.coords.longitude;
         let string =
           "/location/" +
           String(pos.coords.latitude) +
